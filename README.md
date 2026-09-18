@@ -1,39 +1,35 @@
-# NEXUS V1
+# NEXUS V1.0.1
 
-Personal Life Dashboard built with Next.js, TypeScript, Tailwind CSS, Lucide, Recharts and Framer Motion.
+Personal Life Dashboard built for Vercel with Next.js 15.5.25, React 19.1, TypeScript, Tailwind CSS, Lucide, Recharts 3 and Framer Motion.
 
-## Run
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Production check:
+Production build:
 
 ```bash
 npm run build
-npm start
+npm run start
 ```
 
 ## Vercel
 
-Import the repository/project into Vercel. No environment variables are required for this V1. Build command is `npm run build` and the framework is detected as Next.js.
+Import the repository into Vercel. Framework preset: Next.js. Build command: `npm run build`. No environment variables are required for the mock/local V1.
 
-## What's implemented
+## Demo
 
-- Mock/local login (any non-empty credentials; no password persistence).
-- Responsive dashboard, sidebar and mobile navigation.
-- Financial Planner with editable monthly data and live Recharts.
-- Savings goals with create/edit.
-- Locked Vault with demo PIN, inactivity lock, search, reveal/copy and CRUD modal.
-- Shopping stores with add/edit/delete/favorites/external links.
-- Fictional store updates with read state.
-- Notes with create/edit/delete/search/pin/tags.
-- Global CMD/CTRL+K search across notes, stores, vault and goals.
-- Settings UI, notification center and JSON export demo.
-- Framer Motion transitions and polished dark-first UI.
+The login is intentionally mock/local. Any non-empty email and password can enter the dashboard. Vault credentials are fictional demo data held in browser memory only. Do not use real credentials. Production should add real authentication, secure sessions, a master password/key derivation flow, Web Crypto encryption, and encrypted server-side persistence.
 
-## Production architecture notes
+## Architecture
 
-The V1 uses `data/mock.ts` and browser React state. There is no real authentication, database, server-side encryption, or secure password storage. Before using real credentials, implement authentication/session handling, password hashing, a master-password/key derivation strategy, Web Crypto based client-side encryption, encrypted server persistence, authorization and secure environment variables. Store/update ingestion is intentionally local and should later be backed by RSS/API/newsletter/feed workers or controlled scraping.
+- `app/`: Next.js App Router
+- `components/`: UI and application features
+- `data/`: seed/mock data
+- `lib/`: utilities
+- `types/`: domain types
+
+The UI is deliberately separated from seed data so a future repository/API/Supabase/Prisma adapter can replace the local implementation.

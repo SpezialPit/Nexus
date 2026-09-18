@@ -1,4 +1,4 @@
-import { FinancialPlan, Note, Notification, PasswordEntry, SavingsGoal, Store, StoreUpdate, User } from '@/types';
+import type { FinancialPlan, Note, Notification, PasswordEntry, SavingsGoal, Store, StoreUpdate, User } from '@/types';
 export const user:User={name:'Pedro',email:'pedro@example.com',avatar:'P'};
 export const financialPlan:FinancialPlan={year:2026,annualGoal:7500,months:[
 ['January',2850,1500,600,0,750,750],['February',2850,1550,700,0,600,600],['March',2850,1450,580,0,820,820],['April',2850,1600,750,0,500,500],['May',2850,1500,650,100,600,550],['June',2850,1450,620,0,780,650],['July',2850,1550,700,200,400,300],['August',2850,1500,650,0,700,550],['September',2850,1480,620,0,750,400],['October',2850,1500,650,0,700,0],['November',2850,1600,700,0,550,0],['December',2850,1700,750,300,400,0]
